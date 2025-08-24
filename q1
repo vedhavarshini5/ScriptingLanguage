@@ -1,0 +1,14 @@
+function validateForm() {
+    let studentName = document.forms["regForm"]["name"].value;
+    let courseCode = document.forms["regForm"]["course"].value;
+
+    if (studentName === "" || courseCode === "") {
+        alert("All fields must be filled out");
+        return false;
+    }
+    if (!/^[A-Z]{2}[0-9]{3}$/.test(courseCode)) {
+        alert("Course code must be in format like CS101");
+        return false;
+    }
+    return true;
+}
